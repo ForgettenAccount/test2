@@ -1,135 +1,180 @@
-@import './variables.css';
-
 * {
-  box-sizing: border-box;
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: #f0f2f5;
-  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    height: 100vh;
 }
 
-.container {
-  padding-top: 72px;
-  padding-bottom: 112px;
+main {
+    height: 100vh;
+    margin: auto;
+    max-width: 935px;
 }
 
-.main {
-  margin: 0 auto;
-  padding: 20px 0;
-  display: flex;
-  width: 980px;
-}
+a { text-decoration: none; }
+h1 { margin: 20px 0; }
+ul { list-style: none; }
 
-@media screen and (max-width: 960px) {
-  .main {
-    padding: 0 5px;
-    margin: 0 auto;
-    width: auto;
-  }
-}
+/**
+ * Flex rules
+ */
 
-.box-left {
-  box-sizing: border-box;
-  padding: 54px 0 16px;
-  width: 580px;
-  margin-right: 32px;
-}
+    .flex {
+        display: flex;
+    }
 
-@media screen and (max-width: 960px) {
-  .box-left {
-    display: none;
-  }
-}
+    .direction-column {
+        flex-direction: column;
+    }
 
-.box-left > h2 {
-  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
-  font-size: 28px;
-  font-weight: normal;
-  line-height: 32px;
-}
+    .justify-content-center {
+        justify-content: center;
+    }
 
-.box-right {
-  width: 396px;
-}
+    .align-items-center {
+        align-items: center;
+    }
 
-@media screen and (max-width: 960px) {
-  .box-right {
-    width: auto;
-    margin: 0 auto;
-  }
-}
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
 
-.card-form-login {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 8px;
-  padding: 15px;
-  padding: 15px 15px 24px;
-}
+    .panel {
+        background-color: white;
+        border: 1px solid #dbdbdb;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
 
-.card {
-  height: 456px;
-  width: 396px;
-  margin: 40px 0 0;
-}
+    #auth { max-width: 350px; }
 
-@media screen and (max-width: 960px) {
-  .card {
-    width: auto;
-    margin: 0 auto;
-  }
-}
+    #mobile img {
+        height: 618px;
+    }
 
-@media screen and (min-width: 960px) {
-  .mobile-logo {
-    display: none;
-  }
-}
+    /**
+     * Login section
+     */
+    .login-with-fb,
+    form { width: 100%; }
 
-.mobile-logo {
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
+    .register,
+    form { padding: 30px 20px; }
 
-.input {
-  box-sizing: border-box;
-  font-size: 17px;
-  border: 1px solid #dddfe2;
-  border-radius: 6px;
-  padding: 14px 16px;
-  appearance: none;
-  width: 100%;
-}
+    .login-with-fb { padding: 30px 20px 20px 20px; }
 
-.input::-webkit-input-placeholder {
-  color: #878a91;
-}
+    form .sr-only { display: none; }
 
-.input:focus::-webkit-input-placeholder {
-  color: #a8abb1;
-}
+    form input {
+        background-color: #fafafa;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        color: #808080;
+        margin-bottom: 8px;
+        padding: 10px 10px;
+        width: 100%;
+    }
 
-.input:focus {
-  outline: none !important;
-  border-color: #4e9bf6;
-  -webkit-box-shadow: 0 0 2px 0 #4e9bf6;
-  box-shadow: 0 0 2px 0 #4e9bf6;
-}
+    form input::placeholder {
+        color: #808080;
+    }
 
-.forget-password {
-  margin-top: 16px;
-  font-size: 14px;
-}
+    form input:focus {
+        border: 1px solid #808080;
+        outline: none;
+    }
 
-.line-slicer {
-  border-bottom: 1px solid #dadde1;
-  margin: 20px 16px;
-}
+    form button {
+        background-color: #0095f6;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        height: 35px;
+        margin-top: 10px;
+        width: 100%;
+    }
 
-.reg-page {
-  margin-top: 28px;
-  font-size: 14px;
-}
+    /**
+     * Separator login form from login with fb
+     */
+    .separator span {
+        background-color: #dbdbdb;
+        height: 1px;
+        width: calc(100% - 10px);
+    }
+
+    .separator .or {
+        color: #808080;
+        font-weight: bold;
+    }
+
+    .separator { padding: 0 20px; }
+    .separator span:first-child { margin-right: 10px;}
+    .separator span:last-child { margin-left: 10px;}
+
+    /**
+     * Login with fb section
+     */
+    .login-with-fb a { 
+        color: #385185; 
+    }
+
+    .login-with-fb > a { font-size: 12px; }
+    .login-with-fb div a { font-weight: bold; }
+    .login-with-fb div { margin-bottom: 15px; }
+
+    /**
+     * Register section
+     */
+    .register * { font-size: 14px; }
+    .register a { 
+        color: #0095f6;
+        font-weight: bold;
+    }
+
+    .register p { margin-right: 5px; }
+
+    /**
+     * App download
+     */
+    .app-download { padding: 15px; }
+    .app-download p { padding: 10px 0; }
+    .app-download img { 
+        height: 40px; 
+        margin: 0 5px;
+    }
+
+    /**
+     * Footer
+     */
+    .foot {
+        margin: 0 auto 30px auto;
+        max-width: 935px;
+    }
+    .foot ul { margin-bottom: 20px; }
+    .foot ul li { margin: 0 10px 10px; } 
+    .foot ul li a { color: #385185; }
+    .foot .copyright { color: #808080; }
+    .foot ul li a,
+    .foot .copyright { 
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+
+    /**
+     * Media queries
+     */
+
+    @media screen and (max-width: 767px) {
+        main { margin: 30px auto 50px auto; }
+        .foot .copyright,
+        .foot ul li a { font-size: 13px; }
+    }
