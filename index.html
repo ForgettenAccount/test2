@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+
+<body>
+  <form method="post" action="something.php" name="myForm">
+    <input type="submit" name="homepage" value="Please Work" id="homepage">
+  </form>
+<script>
+  var btn = document.getElementById('homepage'),
+  clicked = false;
+
+  btn.addEventListener('click', function () {
+      clicked = true;
+  });
+
+  window.onbeforeunload = function () {
+      if(!clicked) {
+          return 'If you resubmit this page, progress will be lost.';
+      }
+  };
+</script>
+</body>
+</html>
